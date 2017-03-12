@@ -19,7 +19,7 @@
 
 ### Participantes
 
-* Cada layer se puede ver como: 
+Cada layer se puede ver como: 
 
 - Clase: Layer J
 
