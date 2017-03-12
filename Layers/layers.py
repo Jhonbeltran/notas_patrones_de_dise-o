@@ -1,45 +1,48 @@
-class PresentationLayer:
+# Ejemplo de patrón arquitectónico 
+#en una estructura cliente-servidor 
+
+class CapaDePresentacion:
     def __init__(self):
-        self.name = 'PresentationLayer'
+        self.nombre = 'Capa de Presentación (Interfaz de usuario)'
 
-    def setLowerLayer(self, lowerLayer):
-        self.lowerLayer = lowerLayer
+    def delegaTareasA(self, delegaTareasA):
+        self.delegaTareasA = delegaTareasA
 
-    def servicioCapa3(self, param):
-        print('Entramos al servicio %s' % self.name)
-        self.lowerLayer.servicioCapa2(param)
-        print('Termina servicio %s' % self.name)
+    def servicioCapa3(self, parametro):
+        print('Entramos al servicio %s' % self.nombre)
+        self.delegaTareasA.servicioCapa2(parametro)
+        print('Termina servicio %s' % self.nombre)
 
 
-class LogicLayer:
+class CapaDeLogica:
     def __init__(self):
-        self.name = 'LogicLayer'
+        self.nombre = 'Capa de Lógica (Procesamiento de la información)'
 
-    def setLowerLayer(self, lowerLayer):
-        self.lowerLayer = lowerLayer
+    def delegaTareasA(self, delegaTareasA):
+        self.delegaTareasA = delegaTareasA
 
-    def servicioCapa2(self, param):
-        print('Entramos al servicio %s' % self.name)
-        self.lowerLayer.servicioCapa1(param)
-        print('Termina servicio %s' % self.name)
+    def servicioCapa2(self, parametro):
+        print('Entramos al servicio %s' % self.nombre)
+        self.delegaTareasA.servicioCapa1(parametro)
+        print('Termina servicio %s' % self.nombre)
 
 
-class DataLayer:
+class CapaDeAlmacenamientoDeDatos:
     def __init__(self):
-        self.name = 'DataLayer'
+        self.nombre = 'Capa De Almacenamiento De Datos'
 
-    def servicioCapa1(self, param):
-        print('Entramos al servicio %s' % self.name)
-        print('Ejecutamos con %s' % param)
+    def servicioCapa1(self, parametro):
+        print('Entramos al servicio %s' % self.nombre)
+        print('Almacenamos el dato %s' % parametro)
 
 
 if __name__ == '__main__':
     
-    ui = PresentationLayer()
-    logic = LogicLayer()
-    data = DataLayer()
+    interfaz_de_usuario = CapaDePresentacion()
+    logica_de_la_aplicacion = CapaDeLogica()
+    almacenamiento_de_datos = CapaDeAlmacenamientoDeDatos()
 
-    ui.setLowerLayer(logic)
-    logic.setLowerLayer(data)
+    interfaz_de_usuario.delegaTareasA(logica_de_la_aplicacion)
+    logica_de_la_aplicacion.delegaTareasA(almacenamiento_de_datos)
 
-    ui.servicioCapa3('exampleParam')
+    interfaz_de_usuario.servicioCapa3('Parametro a almacenar')
