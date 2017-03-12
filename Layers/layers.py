@@ -5,9 +5,9 @@ class PresentationLayer:
     def setLowerLayer(self, lowerLayer):
         self.lowerLayer = lowerLayer
 
-    def servicioCapa3(self, param):
+    def layerService3(self, param):
         print('Entramos al servicio %s' % self.name)
-        self.lowerLayer.servicioCapa2(param)
+        self.lowerLayer.layerService2(param)
         print('Termina servicio %s' % self.name)
 
 
@@ -18,9 +18,9 @@ class LogicLayer:
     def setLowerLayer(self, lowerLayer):
         self.lowerLayer = lowerLayer
 
-    def servicioCapa2(self, param):
+    def layerService2(self, param):
         print('Entramos al servicio %s' % self.name)
-        self.lowerLayer.servicioCapa1(param)
+        self.lowerLayer.layerService1(param)
         print('Termina servicio %s' % self.name)
 
 
@@ -28,7 +28,7 @@ class DataLayer:
     def __init__(self):
         self.name = 'DataLayer'
 
-    def servicioCapa1(self, param):
+    def layerService1(self, param):
         print('Entramos al servicio %s' % self.name)
         print('Ejecutamos con %s' % param)
 
@@ -42,4 +42,4 @@ if __name__ == '__main__':
     ui.setLowerLayer(logic)
     logic.setLowerLayer(data)
 
-    ui.servicioCapa3('exampleParam')
+    ui.layerService3('exampleParam')
