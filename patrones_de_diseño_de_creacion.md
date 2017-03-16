@@ -6,7 +6,7 @@ Crea una instancia de varias clases derivadas (crear un perro que es una instanc
 
 ### Abstract Factory
 
-Crea una instancia de varias familias de clases
+Crea una instancia de varias familias de clases ()
 
 ### Builder
 
