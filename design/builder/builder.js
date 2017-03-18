@@ -1,6 +1,6 @@
 function testBuilderPattern() {
   var shop = new Director()
-  var carBuilder = null
+  var carBuilder = new CarBuilder()
   var car = shop.construct(carBuilder)
 
   car.doSomething()
@@ -11,6 +11,34 @@ function Director() {
     builder.step1()
     builder.step2()
 
-    return builder.get()
+    return builder.getResult()
   }
 }
+
+function CarBuilder() {
+  this.car = null
+  this.step1 = function() {
+    this.car = new Car();
+  }
+  this.step2 = function() {
+    this.car.addParts()
+  }
+
+  this.getResult = function(){
+    return this.car
+  }
+}
+
+function Car(){
+  this.doors = 0
+  this.addParts = function() {
+    this.doors = 4
+  }
+
+  this.doSomething = function() {
+    console.log("Tengo " + this.doors + " puertas");
+  }
+}
+
+
+testBuilderPattern()
