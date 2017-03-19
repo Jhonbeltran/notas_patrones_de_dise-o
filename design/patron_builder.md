@@ -35,4 +35,4 @@
 
 ### Ventajas
 
-* Si cambia la construccion del objeto final no afecta al builder ni a director
+* Si cambia la construccion del objeto final no afecta al builder ni al director
