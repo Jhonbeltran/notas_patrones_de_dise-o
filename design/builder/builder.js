@@ -20,7 +20,7 @@ function Director() {
 }
 
 function CarBuilder() {
-  console.log("Se revisa que necesita para crearse el carro")
+  console.log("Se revisa que necesita para crearse el carro (builder abstracto)")
   this.car = null
   this.step1 = function() {
     console.log("Se ejecutan las actividades base para la creación")
