@@ -39,6 +39,7 @@ class Factory(metaclass=ABCMeta):
 class Audi(Factory):
     def __init__(self):
         self.manufacturer = 'Audi'
+        print('Factoy {:s} is generating your cars'.format(self.manufacturer))
 
     def createCar(self, carType):
         self.car = None
