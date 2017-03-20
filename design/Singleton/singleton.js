@@ -36,6 +36,7 @@ testOne.publicMethod()
 
 var testTwo = singleton.getInstance()
 testTwo.publicMethod()
-
+console.log(testTwo.getRandomNumber())
+console.log(testOne.getRandomNumber())
 //True
 console.log(testTwo.getRandomNumber() === testOne.getRandomNumber());
