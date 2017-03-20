@@ -8,7 +8,7 @@
 * Una clase quiere que sus subclases especifiquen los objetos que crean.
 
 ### Contexto
-* Los Frameworks utilizan clases abstractas para definir y mantener las relaciones dentra objetos. Una responsabilidad es crear tales objetos(el caso de los modelos por ejemplo que en django heredan de models)
+* Los Frameworks utilizan clases abstractas para definir y mantener las relaciones dentra objetos. Una responsabilidad es crear tales objetos.
 
 ### Solución
 * Definir una interfaz para crear un objeto, pero dejando la elección de su tipo a las subclases, la creación se aplaza hasta el tiempo de ejecución.
