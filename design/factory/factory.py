@@ -41,6 +41,7 @@ class MyFactory():
 # Execute if this file is run as a script and not imported as a module
 if __name__ == '__main__':
     factory = MyFactory()
+    #ConcreteCreator
     sport = factory.createCar('sports')
     family = factory.createCar('family')
 
